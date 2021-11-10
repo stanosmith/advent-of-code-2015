@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/stanosmith/advent-of-code-2015/issues"
   },
-  "homepage": "https://github.com/stanosmith/advent-of-code-2015#readme"
+  "homepage": "https://github.com/stanosmith/advent-of-code-2015#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
 }
