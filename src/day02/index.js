@@ -1,20 +1,28 @@
 import { getInput } from '../utils/index.js'
 
-const inputPath = './input.txt'
-// const inputPath = './test-input.txt'
+// const inputPath = './input.txt'
+const inputPath = './test-input.txt'
 
 try {
   const inputString = await getInput(inputPath)
+  const inputArray = inputString.split('\n').filter((value) => value !== '')
+
+  // Total square footage of wrapping paper
   console.log(
-    inputString
-      .split('\n')
-      .filter((value) => value !== '')
+    inputArray
       .map((box) => {
         return getWrappingPaperTotals(...box.split('x'))
       })
       .reduce((totalSquareFeet, present) => {
         return totalSquareFeet + present.total
       }, 0),
+  )
+
+  // Total feet of ribbon to order
+  console.log(
+    inputArray.map((box) => {
+      return getRibbonTotals(...box.split('x'))
+    }),
   )
 } catch (e) {
   console.error(e)
@@ -41,3 +49,5 @@ function getWrappingPaperTotals(length, width, height) {
     total: squareFeetWrappingPaper + smallestSide,
   }
 }
+
+function getRibbonTotals(length, width, height) {}
